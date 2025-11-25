@@ -1,0 +1,43 @@
+# Virtual Environment - NEVER COMMIT THESE
+myenv/
+venv/
+env/
+ENV/
+.venv/
+
+# Environment Variables - SENSITIVE DATA
+.env
+.env.local
+.env.production
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+pip-log.txt
+
+# Django
+*.log
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+local_settings.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.sqlite
