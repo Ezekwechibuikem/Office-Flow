@@ -118,7 +118,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         ('HYBRID', 'Hybrid'),
         ('FLEXIBLE', 'Flexible'),
     ]
-    work_schedule = models.CharField(max_length=20, choices=WORK_SCHEDULE_CHOICES, default='9_TO_5', verbose_name='Work Schedule')
+    work_schedule = models.CharField(max_length=20, choices=WORK_SCHEDULE_CHOICES, default='HYBRID', verbose_name='Work Schedule')
     
     office_location = models.CharField(max_length=200, blank=True, null=True, verbose_name='Office Location')
     
