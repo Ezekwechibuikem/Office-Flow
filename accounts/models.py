@@ -9,9 +9,7 @@ class CustomUserManager(BaseUserManager):
     Custom manager for email-based authentication
     """
     def create_user(self, email, password=None, **extra_fields):
-        """
-        Create and save a regular user with email and password
-        """
+        
         if not email:
             raise ValueError('Email address is required')
         
@@ -22,17 +20,12 @@ class CustomUserManager(BaseUserManager):
         return user
     
     def create_superuser(self, email, password=None, **extra_fields):
-        """
-        Create and save a superuser with admin privileges
-        Superusers can access Django admin and have all permissions
-        """
-        # Set required flags for superuser
+       
         extra_fields.setdefault('is_staff', True)       
         extra_fields.setdefault('is_superuser', True)   
         extra_fields.setdefault('is_active', True)      
         extra_fields.setdefault('approval_level', 'DIRECTOR')  
         
-        # Validate flags
         if extra_fields.get('is_staff') is not True:
             raise ValueError('Superuser must have is_staff=True')
         if extra_fields.get('is_superuser') is not True:
@@ -42,9 +35,7 @@ class CustomUserManager(BaseUserManager):
     
     
 class Department(models.Model):
-    """
-    Departments within the organization
-    """
+  
     name = models.CharField(
         max_length=100, 
         unique=True, 
@@ -97,13 +88,10 @@ class Department(models.Model):
     
     def get_unit_count(self):
         """Count how many units are in this department"""
-        return self.units.count()  # 'units' is the related_name from Unit model
-
+        return self.units.count()  
 
 class Unit(models.Model):
-    """
-    Units within a Department
-    """
+    
     name = models.CharField(max_length=100, verbose_name='Unit Name', help_text='e.g., Network Team, Backend Development, Quality Assurance')
     code = models.CharField(max_length=20, verbose_name='Unit Code', help_text='Short code: NET, DEV, QA, SUP')
     
