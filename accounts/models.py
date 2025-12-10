@@ -5,6 +5,7 @@ from django.core.exceptions import ValidationError
 
 
 class CustomUserManager(BaseUserManager):
+    "This is the custom user manager for CustomUser model"
     
     def create_user(self, email, password=None, **extra_fields):
         if not email:
