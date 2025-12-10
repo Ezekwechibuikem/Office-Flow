@@ -191,7 +191,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         help_text='Company email if different from login email'
     )
     
-    # ========== PERSONAL INFORMATION ==========
     first_name = models.CharField(max_length=50, verbose_name='First Name')
     last_name = models.CharField(max_length=50, verbose_name='Last Name')
     middle_name = models.CharField(max_length=50, blank=True, null=True, verbose_name='Middle Name')
@@ -467,7 +466,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         help_text='Has all permissions without explicitly assigning them'
     )
     
-    # ========== TIMESTAMPS ==========
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated At')
     last_login = models.DateTimeField(blank=True, null=True, verbose_name='Last Login')

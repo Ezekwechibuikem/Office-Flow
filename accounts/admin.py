@@ -265,7 +265,7 @@ class CustomUserAdmin(UserAdmin):
         }),
         ('Professional Information', {
             'fields': (
-                'employee_id', 'position', 'level',
+                'employee_id', 'position',
                 'bio', 'skills', 'languages'
             ),
             'description': 'Job-related information and skills'
